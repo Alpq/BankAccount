@@ -1,3 +1,4 @@
+// THANKS TO RENG ZHENG AND STEVEN LEI FOR HELPING PROVIDE TEST CASES
 public class BankAccount{
   private double balance = 0;
   private int accountID;
@@ -22,7 +23,7 @@ public class BankAccount{
   }
   public boolean deposit(double amount)
   {
-    boolean truth = amount > 0;
+    boolean truth = amount >= 0;
     if (truth)
     {
     this.balance = this.balance + amount;
@@ -32,7 +33,7 @@ public class BankAccount{
   }
   public boolean withdraw(double amount)
   {
-    boolean truth = (amount > 0) && (this.balance > amount);
+    boolean truth = this.balance >= amount && amount >= 0;
     if (truth)
     {
       this.balance = this.balance - amount;
