@@ -33,7 +33,7 @@ public class BankAccount{
   }
   public boolean withdraw(double amount)
   {
-    boolean truth = this.balance >= amount && amount >= 0;
+    boolean truth = amount >= 0 && (this.balance >= amount);
     if (truth)
     {
       this.balance = this.balance - amount;
