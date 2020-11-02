@@ -45,4 +45,19 @@ public class BankAccount{
   {
     return Integer.toString(this.accountID) + "\t" + this.balance+"";
   }
+  private boolean authenticate(String pass)
+  {
+    return pass.equals(this.password);
+  }
+  public boolean transferTo(BankAccount other, double amo, String pass)
+  {
+    if (this.authenticate(pass))
+    {
+      if (this.withdraw(amo) && other.deposit(amo))
+      {
+        return true;
+      }
+    }
+    return false;
+  }
 }
